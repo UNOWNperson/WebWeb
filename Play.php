@@ -1,28 +1,5 @@
-<!doctype html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Stylesheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
-    <script src="JavaScript/GenericFunctions.js"></script>
-    <script src="ParticleJS/app.js"></script>
-    <script src="ParticleJS/particles.js"></script>
-    <title>Document</title>
-</head>
+<?php require_once "Navbar.php" ?>
 <body>
-    <div class="navbar">
-        <div id="navbarButtons">
-            <a href="News.php">News</a>
-            <a href="Play.php">Avalon</a>
-            <a href="Updates.php">Updates</a>
-        </div>
-        <a href="Settings.php" id="settingsIcon"><img src="Resources/user.png" id="userIcon"></a>
-    </div>
-
     <div id="particles-small">
         <script>particlesJS("particles-small", particleConfigBlackBackground, "partiSmall");</script>
     </div>
@@ -30,20 +7,61 @@
     <div id="particles-big" class="hidden"></div>
 
     <div id="playMenu">
-        <button id="playButton" onmouseenter="ChangeText('id', 'playButtonText', '> PLAY <')" onmouseleave="ChangeText('id', 'playButtonText', 'PLAY')"><span id="playButtonText">PLAY</span></button>
+        <button class="clickButton"
+                onmouseenter="ChangeText('id', 'playButtonText', '> PLAY <')"
+                onmouseleave="ChangeText('id', 'playButtonText', 'PLAY')"
+                onclick="HideShowFade('playMenu', 'typeMenu')" >
+                <span id="playButtonText">PLAY</span>
+        </button>
     </div>
     <div id="typeMenu" class="hidden">
-        <button id="loginButton" class="LoginRegisterButton">Login</button>
-        <br />
-        <button id="registerButton" class="LoginRegisterButton" onclick="showElement('Placeholder')">Register</button>
+        <button class="clickButton-Small"
+                onmouseenter="ChangeText('id', 'loginButtonText', '> LOGIN <')"
+                onmouseleave="ChangeText('id', 'loginButtonText', 'LOGIN')"
+                onclick="HideShowFade('typeMenu', 'loginMenu')
+                         HideShowFade('particles-small', 'particles-big')">
+            <span id="loginButtonText">LOGIN</span>
+        </button>
+        <button class="clickButton-Small"
+                onmouseenter="ChangeText('id', 'registerButtonText', '> REGISTER <')"
+                onmouseleave="ChangeText('id', 'registerButtonText', 'REGISTER')"
+                onclick="HideShowFade('typeMenu', 'registerMenu')
+                         HideShowFade('particles-small', 'particles-big')">
+            <span id="registerButtonText">REGISTER</span>
+        </button>
     </div>
     <div id="loginMenu" class="hidden">
         <form>
-            <input type="text" placeholder="username">
+            <span class="bigSpan">LOGIN</span>
             <br>
-            <input type="password" placeholder="password">
+            <input type="text" name="loginUsername" placeholder="username">
             <br>
-            <button type="submit">> Login <</button>
+            <input type="password" name="loginPassword" placeholder="password">
+            <br>
+            <input type="hidden" name="login">
+            <button type="submit" class="clickButton-Smaller" id="PHPLoginButtonText"
+                onmouseenter="ChangeText('id', 'PHPLoginButtonText', '> CONTINUE <')"
+                onmouseleave="ChangeText('id', 'PHPLoginButtonText', 'CONTINUE')">
+                CONTINUE
+            </button>
+        </form>
+    </div>
+    <div id="registerMenu" class="hidden">
+        <form>
+            <span class="bigSpan">REGISTER</span>
+            <br>
+            <input type="email" name="registerEmail" placeholder="e-mail">
+            <br>
+            <input type="text" name="registerUsername" placeholder="username">
+            <br>
+            <input type="password" name="registerPassword" placeholder="password">
+            <br>
+            <input type="hidden" name="register">
+            <button type="submit" class="clickButton-Small" id="PHPRegisterButtonText"
+                    onmouseenter="ChangeText('id', 'PHPRegisterButtonText', '> BEGIN <')"
+                    onmouseleave="ChangeText('id', 'PHPRegisterButtonText', 'BEGIN')">
+                BEGIN
+            </button>
         </form>
     </div>
 

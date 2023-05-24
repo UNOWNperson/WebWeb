@@ -13,16 +13,34 @@ a {
     padding: 0 10px;
 }
 
+form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bigSpan {
+    font-size: 20px;
+}
 
 input {
+    transition: 300ms;
     font-family: 'Orbitron', sans-serif;
     padding-top: 25px;
-    margin-bottom: 5vh;
     background-color: transparent;
     border: none;
     color: white;
     text-align: center;
     border-bottom: solid white 3px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
 }
 
 button {
@@ -114,14 +132,27 @@ button {
     height: 50vh;
     z-index: 1;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#playButton {
+#registerMenu {
+    width: 20%;
+    height: 50vh;
+    z-index: 1;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clickButton {
+    transition: 300ms;
     display: flex;
     margin-top: 2vh;
     margin-left: auto;
@@ -130,10 +161,33 @@ button {
     width: 55%;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 30px;
 }
 
-#playButton:hover {
+.clickButton-Small {
+    transition: 300ms;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35%;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.clickButton-Smaller {
+    transition: 300ms;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35%;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.clickButton:hover, .clickButton-Small:hover, .clickButton-Smaller:hover {
     transition: 300ms;
     text-shadow:
             0 0 20px #fff,  /* inner white */
@@ -141,15 +195,6 @@ button {
             0 0 40px #0ff;  /* outer cyan */
 }
 
-.LoginRegisterButton {
-    display: block;
-    margin: 0 auto;
-    height: 25%;
-    width: 70%;
-    background-color: deepskyblue;
-}
-
 .hidden {
-    display: none;
     visibility: hidden;
 }

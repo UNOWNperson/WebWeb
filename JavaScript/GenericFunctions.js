@@ -9,3 +9,14 @@ function ChangeText(IDorClass, element, text)
         document.getElementById(element).innerText = text;
     }
 }
+
+window.onload = function() {
+
+    setTimeout(GXFix, 500);
+}
+function GXFix()
+{
+    if (document.getElementById("detach-button-host") != null) {
+        document.getElementById("detach-button-host").setAttribute("class", "hidden");
+    }
+}

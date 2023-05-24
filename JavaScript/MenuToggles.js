@@ -1,17 +1,5 @@
 var debounce = false;
 
-var playButton = document.getElementById('playButton');
-var loginButton = document.getElementById('loginButton');
-
-playButton.addEventListener("click", function() {
-    HideShowFade('playMenu', 'typeMenu');
-});
-
-loginButton.addEventListener("click", function() {
-    HideShowFade('typeMenu', 'loginMenu');
-    HideShowFade('particles-small', 'particles-big');
-});
-
 function HideShowFade(hide, show) {
     if (!debounce || hide == "particles-small") {
         debounce = true;
@@ -25,14 +13,13 @@ function HideShowFade(hide, show) {
                 hideElem.setAttribute("class", "hidden");
                 showElement(show);
             }
-        }, 20);
+        }, 5);
     }
 }
 
 function showElement(id) {
     var elem = document.getElementById(id);
-    if(elem.toString("particles-big"))
-    {
+    if (elem.toString("particles-big")) {
         particlesJS("particles-big", particleConfigBlackBackground, "partiBig");
     }
     elem.style.opacity = 0;
@@ -43,7 +30,13 @@ function showElement(id) {
         elem.style.opacity = opacity;
         if (opacity >= 1) {
             clearInterval(intervalOpacity);
-            debounce = false;
+            debounce = false; // Reset debounce to false
         }
-    }, 20);
+    }, 5);
 }
+
+
+
+
+
+
