@@ -64,7 +64,9 @@ button {
 
 #navbarButtons {
     display: flex;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 42vw;
 }
 
 #userIcon {

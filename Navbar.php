@@ -14,9 +14,9 @@
 <body>
     <div class="navbar">
         <div id="navbarButtons">
-            <a href="News.php">News</a>
+            <a href="News.php">Forums</a>
             <a href="Play.php">Avalon</a>
-            <a href="Updates.php">Updates</a>
+            <a href="Updates.php">News & Updates</a>
         </div>
         <a href="Settings.php" id="settingsIcon"><img src="Resources/user.png" id="userIcon"></a>
     </div>
