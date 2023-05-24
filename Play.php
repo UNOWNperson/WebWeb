@@ -1,30 +1,25 @@
 <?php require_once "Navbar.php" ?>
 <body>
     <div id="particles-small">
-        <script>particlesJS("particles-small", particleConfigBlackBackground, "partiSmall");</script>
+        <script>particlesJS("particles-small", particleConfigSmall, "partiSmall");</script>
     </div>
+    <div id="particles-big" class="hidden">
 
-    <div id="particles-big" class="hidden"></div>
+    </div>
 
     <div id="playMenu">
         <button class="clickButton"
-                onmouseenter="ChangeText('id', 'playButtonText', '> PLAY <')"
-                onmouseleave="ChangeText('id', 'playButtonText', 'PLAY')"
                 onclick="HideShowFade('playMenu', 'typeMenu')" >
                 <span id="playButtonText">PLAY</span>
         </button>
     </div>
     <div id="typeMenu" class="hidden">
         <button class="clickButton-Small"
-                onmouseenter="ChangeText('id', 'loginButtonText', '> LOGIN <')"
-                onmouseleave="ChangeText('id', 'loginButtonText', 'LOGIN')"
                 onclick="HideShowFade('typeMenu', 'loginMenu')
                          HideShowFade('particles-small', 'particles-big')">
             <span id="loginButtonText">LOGIN</span>
         </button>
         <button class="clickButton-Small"
-                onmouseenter="ChangeText('id', 'registerButtonText', '> REGISTER <')"
-                onmouseleave="ChangeText('id', 'registerButtonText', 'REGISTER')"
                 onclick="HideShowFade('typeMenu', 'registerMenu')
                          HideShowFade('particles-small', 'particles-big')">
             <span id="registerButtonText">REGISTER</span>
@@ -39,11 +34,7 @@
             <input type="password" name="loginPassword" placeholder="password">
             <br>
             <input type="hidden" name="login">
-            <button type="submit" class="clickButton-Smaller" id="PHPLoginButtonText"
-                onmouseenter="ChangeText('id', 'PHPLoginButtonText', '> CONTINUE <')"
-                onmouseleave="ChangeText('id', 'PHPLoginButtonText', 'CONTINUE')">
-                CONTINUE
-            </button>
+            <button type="submit" class="clickButton-Smaller" id="PHPLoginButtonText">CONTINUE</button>
         </form>
     </div>
     <div id="registerMenu" class="hidden">
@@ -57,11 +48,7 @@
             <input type="password" name="registerPassword" placeholder="password">
             <br>
             <input type="hidden" name="register">
-            <button type="submit" class="clickButton-Small" id="PHPRegisterButtonText"
-                    onmouseenter="ChangeText('id', 'PHPRegisterButtonText', '> BEGIN <')"
-                    onmouseleave="ChangeText('id', 'PHPRegisterButtonText', 'BEGIN')">
-                BEGIN
-            </button>
+            <button type="submit" class="clickButton-Small" id="PHPRegisterButtonText">BEGIN</button>
         </form>
     </div>
 

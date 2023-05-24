@@ -14,6 +14,8 @@ class DatabaseConnect
         $this->password = $password;
         $this->DBName = $DBName;
         $this->dbConnect = new PDO("mysql:host=" . $this->IP . ";dbname=" . $this->DBName, $this->username, $this->password);
-    } //Maak de actual connection link
+    }
 }
+
+$db = new DatabaseConnect("localhost", "root", "", "avalon");
 ?>

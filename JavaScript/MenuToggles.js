@@ -20,7 +20,7 @@ function HideShowFade(hide, show) {
 function showElement(id) {
     var elem = document.getElementById(id);
     if (elem.toString("particles-big")) {
-        particlesJS("particles-big", particleConfigBlackBackground, "partiBig");
+        particlesJS("particles-big", particleConfigBig, "partiBig");
     }
     elem.style.opacity = 0;
     elem.removeAttribute("class", "hidden");

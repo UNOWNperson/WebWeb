@@ -2,9 +2,9 @@
 require_once 'Navbar.php';
 require_once 'db.php';
 
+//Maik, vergeet niet dat patchnotes en news nu 1 tabel is, dus je heb maar 1 foreach nodig!
 
-$db = new DatabaseConnect("localhost", "root", "", "avalon");
-
+global $db;
 $stmt = $db->dbConnect->prepare("SELECT * FROM patchnotes");
 $news = $db->dbConnect->prepare("SELECT * FROM news");
 
@@ -41,7 +41,4 @@ foreach($resultn as $daten){
  echo "--------------NEWS------------------------------------------------------------------------------------------------------------------------------------------------------------------";
  echo "<br>";
 }
-  /*  while($row = $stmt->fetch()) {
-echo "titel: " . $row["titel"]. "<br>". " - content: " . $row["content"]. "<br>". " - date: " . $row["date"]. "<br>". " - version: " . $row["version"]. "<br>";
-    } */
 ?>

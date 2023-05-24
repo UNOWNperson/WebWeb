@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <script src="ParticleJS/app.js"></script>
     <script src="ParticleJS/particles.js"></script>
+    <script src="JavaScript/MenuToggles.js"></script>
+    <script src="JavaScript/GenericFunctions.js"></script>
     <title>Document</title>
 </head>
 <body>
