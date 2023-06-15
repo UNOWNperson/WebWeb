@@ -1,26 +1,22 @@
 <?php require_once "Navbar.php" ?>
 <div class="wrapper">
     <div class="lezenvakje">
-        <?php
+    <?php
         require_once "db.php";
+        $stmt = $db->dbConnect->prepare("SELECT * FROM patchnews WHERE id = :id");
+        $stmt->execute([
+            "id" => $_GET["id"]
+        ]);
 
-        // Maak een instantie van de DatabaseConnect-klasse
-        $db = new DatabaseConnect("localhost", "root", "", "avalon");
-        // Haal het patchnotes op basis van de titel
+        $data = $stmt->fetch(); // Fetch a single row
 
-        $patchnewsItemTitel = $_GET["titel"];
-        $stmt = $db->dbConnect->prepare("SELECT * FROM patchnews WHERE titel = :titel");
-        $stmt->bindParam(":titel", $patchnewsItemTitel);
-        $stmt->execute();
-
-        // Controleer of het nieuwsitem bestaat en toon de inhoud
-        if ($row = $stmt->fetch()) {
-            echo "<h2 class='news-item-title blue'>" . $row["titel"] . "</h2>";
-            echo "<p class='news-item-content'>" . $row["content"] . "</p>";
-            echo "<p class='news-item-version'>Version: " . $row["version"] . "</p>";
-            echo "<p class='news-item-meta'>Datum: " . $row["date"] . "</p>";
+        if ($data) {
+            echo "<h2 class='news-item-title blue'>" . $data["titel"] . "</h2>";
+            echo "<p class='news-item-content'>" . $data["content"] . "</p>";
+            echo "<p class='news-item-type'>type: " . $data["entrytype"] . "</p>";
+            echo "<p class='news-item-meta'>Datum: " . $data["datetime"] . "</p>";
         } else {
-            echo "An error occurred.";
+            echo "No data found for the given ID";
         }
         ?>
     </div>

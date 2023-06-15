@@ -26,7 +26,7 @@
 <div class="wrapper">
     <div class="lezenvakje">
 <?php
-require_once "DatabaseConnect.php";
+require_once "db.php";
 //require_once "Navbar.php";
 
 // Maak een instantie van de DatabaseConnect-klasse
@@ -34,7 +34,7 @@ $db = new DatabaseConnect("localhost", "root", "", "avalon");
 
 // Haal het nieuwsitem op basis van de titel
 $newsItemTitel = $_GET["titel"];
-$stmt = $db->dbConnect->prepare("SELECT * FROM news WHERE titel = :titel");
+$stmt = $db->dbConnect->prepare("SELECT * FROM patchnews WHERE titel = :titel");
 $stmt->bindParam(":titel", $newsItemTitel);
 $stmt->execute();
 

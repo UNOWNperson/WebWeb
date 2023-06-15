@@ -16,10 +16,10 @@
 <body>
     <div class="navbar">
         <div id="navbarButtons">
-            <a href="News.php">Forums</a>
+            <a href="#">Forums</a>
             <a href="Play.php">Avalon</a>
-            <a href="patchnotes.php">News & Updates</a>
+            <a href="patchnews.php">News & Updates</a>
         </div>
-        <a href="Settings.php" id="settingsIcon"><img src="Resources/user.png" id="userIcon"></a>
+        <a href="#" id="settingsIcon"><img src="Resources/user.png" id="userIcon"></a>
     </div>
 </body>
